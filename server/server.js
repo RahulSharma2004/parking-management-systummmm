@@ -16,9 +16,14 @@ app.use(bodyParser.json());
 
 
 const authRoutes = require('./routes/userRouter');
-
+const parkingRoutes=require('./routes/parkingSpace');
 
 app.use('/api/user', authRoutes);
+app.use('/api/parking', parkingRoutes);
+
+app.get('/',(req,res) => {
+    res.send("working");
+});
 
 
 // Start server
